@@ -46,7 +46,7 @@ class LaraClip extends Model
 	*/
 	public function hasAttachedFile($name, $options = array())
 	{
-		// Register the attachment with stapler and setup event listeners.
+		// Register the attachment with laraclip and setup event listeners.
 		$this->registerAttachment($name, $options);
 	}
 
@@ -59,7 +59,7 @@ class LaraClip extends Model
 	{
 		parent::boot();
 
-		static::bootStapler();
+		static::bootLaraclip();
 	}
 
 	/**
@@ -70,7 +70,7 @@ class LaraClip extends Model
      * 
 	 * @return void
 	 */
-	public static function bootStapler()
+	public static function bootLaraclip()
 	{
 		static::saved(function($instance) {
 			foreach($instance->attachedFiles as $attachedFile) {
@@ -150,8 +150,8 @@ class LaraClip extends Model
 
 	/**
 	 * Merge configuration options.
-	 * Here we'll merge user defined options with the stapler defaults in a cascading manner.
-	 * We start with overall stapler options.  Next we merge in storage driver specific options.
+	 * Here we'll merge user defined options with the laraclip defaults in a cascading manner.
+	 * We start with overall laraclip options.  Next we merge in storage driver specific options.
 	 * Finally we'll merge in attachment specific options on top of that.
 	 *
 	 * @param  array $options
@@ -159,10 +159,10 @@ class LaraClip extends Model
 	 */
 	protected function mergeOptions($options)
 	{
-		$defaultOptions = Config::get('stapler::stapler');
+		$defaultOptions = Config::get('laraclip::laraclip');
 		$options = array_merge($defaultOptions, (array) $options);
 		$storage = $options['storage'];
-		$options = array_merge(Config::get("stapler::{$storage}"), $options);
+		$options = array_merge(Config::get("laraclip::{$storage}"), $options);
 		$options['styles'] = array_merge( (array) $options['styles'], array('original' => ''));
 
 		return $options;
