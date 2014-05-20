@@ -43,7 +43,7 @@ Once this operation completes, the final step is to add the service provider. Op
     'Expstudio\LaraClip\LaraClipServiceProvider'
 ```
 ## Warning
-Do not use new PHP5.4+ array syntax ([] square bracket). Use old style array instead.
+Do not use new PHP5.4+ array syntax ([] square bracket). Use old style array ( array() ) instead.
 ## Quickstart
 In the document root of your application (most likely the public folder), create a folder named system and 
 grant your application write permissions to it.
