@@ -122,7 +122,7 @@ class Attachment
 	{
 		$this->clear();
 
-		if ($uploadedFile == LaraClip_NULL) {
+		if ($uploadedFile == LARACLIP_NULL) {
 			return;
 		}
 
@@ -416,7 +416,7 @@ class Attachment
 
 	/**
 	 * Destroys the attachment.  Has the same effect as previously assigning
-	 * LaraClip_NULL to the attachment and then saving.
+	 * LARACLIP_NULL to the attachment and then saving.
 	 *
 	 * @param  array $stylesToClear
 	 * @return void
@@ -429,7 +429,7 @@ class Attachment
 
 	/**
 	 * Clears out the attachment.  Has the same effect as previously assigning
-	 * LaraClip_NULL to the attachment.  Does not save the associated model.
+	 * LARACLIP_NULL to the attachment.  Does not save the associated model.
 	 *
 	 * @param  array $stylesToClear
 	 * @return void

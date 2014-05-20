@@ -14,7 +14,7 @@ class LaraClipServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
-	 * Holds the hash value for the current LaraClip_NULL constant.
+	 * Holds the hash value for the current LARACLIP_NULL constant.
 	 * 
 	 * @var string
 	 */
@@ -39,8 +39,8 @@ class LaraClipServiceProvider extends ServiceProvider {
 	{
 		$this->laraclipNull = sha1(time());
 
-		if (!defined('LaraClip_NULL')) {
-			define('LaraClip_NULL', $this->laraclipNull);
+		if (!defined('LARACLIP_NULL')) {
+			define('LARACLIP_NULL', $this->laraclipNull);
 		}
 		
 		$this->registerResizer();
